@@ -10,7 +10,8 @@ client = MongoClient('mongodb+srv://sparta:test@cluster0.0uiki8z.mongodb.net/?re
 db = client.dbsparta
 
 
-
+# localhost:5000을 입력하면 index.html 이 나오게 해라
+# @app.route('/') = localhost:5000
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -28,6 +29,7 @@ def comments_post():
     db.comments.insert_one(doc)
 
     return jsonify({'msg': '방명록 저장 완료!'})
+# jsonify : 사용자가 json data를 내보내도록 제공하는 flask의 함수.
 
 # GET 방식 : 방명록 불러오기
 @app.route('/comments', methods=['GET'])
@@ -50,6 +52,6 @@ def comments_pull():
     db.comments.update_one({'nickname':editnickname_receive},{'$set':{'comment':editcomment_receive}})
     return jsonify({'msg': '방명록 수정 완료!'})
 
-
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)
+    # debug=True 디버깅 모드 실행
