@@ -16,7 +16,7 @@ https://gleaming-harp-2af.notion.site/S-A-5d4797ac156440289ccd9d25f8c3f169
 - 백엔드 : Python (flask)
 - DB : MongoDB
 
-👩🏻‍💻 우리 팀 규칙
+👩🏻‍💻 우리 팀 규칙   
 🍚 13:00 ~ 14:00 점심 시간   
 🍴 18:00 ~ 19:00 저녁 시간   
 - TIL 링크 9시에 팀 방에 업로드   
