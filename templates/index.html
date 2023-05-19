@@ -197,60 +197,7 @@
                                         <blockquote class="blockquote mb-0" id="blockquote">
                                             <p>${comment}</p>
                                             <footer class="blockquote-footer">${nickname}</footer>
-                                            <button id="boxbutton" type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">삭제하기</button>
-                                            <!--삭제하기 모달-->
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">삭제하기</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                            <div class="mb-3">
-                                                <label for="recipient-name" class="col-form-label">닉네임: </label>
-                                                <input type="text" class="form-control" id="delnickname">
-                                            </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                                            <button onclick = "del_comment()" type="button" class="btn btn-primary" >삭제하기</button>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    </div>
-                                    <button id="boxbutton" type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-bs-whatever="@mdo">수정하기</button>
-                                    <!--수정하기 모달-->
-                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">수정하기</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            <form>
-                            <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">닉네임: </label>
-                            <input type="text" class="form-control" id="editnickname">
-                            <label for="recipient-name" class="col-form-label">방명록: </label>
-                            <input type="text" class="form-control" id="editcomment">
-                            </div>
-                            </form>
-                            </div>
-                            <div class="modal-footer">
-                            <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                            <button onclick = "edit_comment()" type="button" class="btn btn-primary">수정하기</button>
-                            </div>
-                            </div>
-                            </div>
-                            </div>
-        
-                                    </blockquote>
-                                        </div>
-                                </div>`
+                                            <button type="button" class="btn btn-dark" onclick="del_comment('${nickname}')">삭제하기</button>`
                     $('#comment-list').append(temp_html)
                 });
             })
@@ -271,10 +218,9 @@
 
         // DELETE 방식 : 입력한 삭제할 닉네임 값을 delnickname_give에 담아 보냅니다.
 
-        function del_comment() {
+        function del_comment(nickname) {
 
-            let delnickname = $('#delnickname').val()
-
+            let delnickname = nickname
             let formData = new FormData();
             formData.append("delnickname_give", delnickname);
 
