@@ -45,8 +45,8 @@ def comments_del():
    return jsonify({'msg': '방명록 삭제 완료!'})
 
 # PULL 방식 : 입력한 닉네임값에 해당하는 방명록의 내용을 editcomment_give 로 받아서 수정합니다.
-@app.route('/comments', methods=['PULL'])
-def comments_pull():
+@app.route('/comments', methods=['PUT'])
+def comments_put():
     editnickname_receive = request.form['editnickname_give']
     editcomment_receive = request.form['editcomment_give']
     db.comments.update_one({'nickname':editnickname_receive},{'$set':{'comment':editcomment_receive}})
