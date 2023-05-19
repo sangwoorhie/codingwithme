@@ -44,7 +44,7 @@ def comments_del():
    db.comments.delete_one({'nickname': delnickname_receive})
    return jsonify({'msg': '방명록 삭제 완료!'})
 
-# PULL 방식 : 입력한 닉네임값에 해당하는 방명록의 내용을 editcomment_give 로 받아서 수정합니다.
+# PUT 방식 : 입력한 닉네임값에 해당하는 방명록의 내용을 editcomment_give 로 받아서 수정합니다.
 @app.route('/comments', methods=['PUT'])
 def comments_put():
     editnickname_receive = request.form['editnickname_give']
