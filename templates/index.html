@@ -255,10 +255,8 @@
     // DELETE 방식 : 입력한 삭제할 닉네임 값을 delnickname_give에 담아 보냅니다.
 
     function del_comment(nickname) {
-
-      let delnickname = nickname
       let formData = new FormData();
-      formData.append("delnickname_give", delnickname);
+      formData.append("delnickname_give", nickname);
 
       fetch('/comments', { method: "DELETE", body: formData }).then((res) => res.json()).then((data) => {
 
@@ -268,10 +266,9 @@
     }
     // PUT 방식 : 입력한 수정할 방명록의 닉네임값 editnickname_give 와 수정할 내용을 editcomment_give 에 담아 보냅니다.
     function edit_comment(nickname) {
-      let editnickname = nickname
       let editcomment = $('#editcomment').val()
       let formData = new FormData()
-      formData.append("editnickname_give", editnickname)
+      formData.append("editnickname_give", nickname)
       formData.append("editcomment_give", editcomment)
       fetch("/comments", { method: "PUT", body: formData }).then(res => res.json()).then(data => {
         alert(data["msg"])
