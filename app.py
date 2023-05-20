@@ -57,7 +57,10 @@ def comments_del():
 def comments_put():
     editnickname_receive = request.form['editnickname_give']
     editcomment_receive = request.form['editcomment_give']
+    kst = timezone(timedelta(hours=9))
+    nowtime = str(datetime.now(tz=kst))
     db.comments.update_one({'nickname':editnickname_receive},{'$set':{'comment':editcomment_receive}})
+    db.comments.update_one({'nickname':editnickname_receive},{'$set':{'time':nowtime}})
     return jsonify({'msg': '방명록 수정 완료!'})
 
 if __name__ == '__main__':
