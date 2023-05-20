@@ -4,6 +4,9 @@ app = Flask(__name__)
 from pymongo import MongoClient
 import certifi
 
+from datetime import datetime, timezone, timedelta
+
+
 ca = certifi.where()
 
 client = MongoClient('mongodb+srv://sparta:test@cluster0.0uiki8z.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
@@ -21,11 +24,16 @@ def home():
 def comments_post():
     nickname_receive = request.form['nickname_give']
     comment_receive = request.form['comment_give']
-
+    kst = timezone(timedelta(hours=9))
+    nowtime = str(datetime.now(tz=kst))
     doc = {
         'nickname':nickname_receive,
-        'comment':comment_receive
+        'comment':comment_receive,
+        'time':nowtime
         }
+    
+
+
     db.comments.insert_one(doc)
 
     return jsonify({'msg': '방명록 저장 완료!'})
