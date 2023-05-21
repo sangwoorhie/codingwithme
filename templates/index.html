@@ -159,6 +159,10 @@
     .reple {
       border-radius: 10px;
     }
+
+    .tracktitle{
+      font-size: 20px;
+    }
    
   </style>
   <script>
@@ -250,7 +254,7 @@
                                             </div>
                                             `
 
-          $('#comment-list').append(temp_html)
+          $('#comment-list').prepend(temp_html)
         });
 
       })
@@ -416,8 +420,8 @@
     <div class="form-floating">
       <input id="comment" class="form-control" placeholder="응원 한 마디">
       <label for="floatingPassword">응원 한 마디</label>
-      <fieldset class="allcheckbox">
-        <legend>트랙을 선택해 주세요</legend>
+      <fieldset class="allcheckbox"><br>
+        <legend class = "tracktitle">트랙을 선택해 주세요</legend>
         <div>
           <input type="checkbox" class = "track1" id="Node.js" value="Node.js"   />
           <label for="Node.js">Node.js</label>
