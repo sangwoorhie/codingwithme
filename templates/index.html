@@ -159,21 +159,41 @@
     .reple {
       border-radius: 10px;
     }
+   
   </style>
   <script>
     // 페이지를 열면 show_comment() 함수가 실행됩니다. 방명록 리스트가 나옵니다. 
     $(document).ready(function () {
       show_comment();
     });
-    // POST 방식 : nickname_give, comment_give 에 방명록을 작성하기 위한 닉네임, 내용을 담아 보냅니다. 
+    // POST 방식 : nickname_give, comment_give, track_give 에 방명록을 작성하기 위한 닉네임, 내용, 트랙을 담아 보냅니다. 
     function save_comment() {
       let nickname = $('#nickname').val()
       let comment = $('#comment').val()
+      let track1 = $('.track1')
+      let track2 = $('.track2')
+      let track3 = $('.track3')
+      let track
 
+      if (track1.is(':checked') == true){
+        track = track1.val().toString();;
+           }
+      else if(track2.is(':checked') == true){
+        track = track2.val().toString();;
+
+      }
+      else if (track3.is(':checked') ==true){
+        track = track3.val().toString();;
+
+      }
+      else{
+        alert('트랙이 없나요? 트랙을 신청해 보세요!');
+      }
 
       let formData = new FormData();
       formData.append("nickname_give", nickname);
       formData.append("comment_give", comment);
+      formData.append("track_give", track);
 
       fetch('/comments', { method: "POST", body: formData }).then((res) => res.json()).then((data) => {
         alert(data["msg"]);
@@ -188,7 +208,9 @@
         rows.forEach((a) => {
           let nickname = a['nickname']
           let comment = a['comment']
+          let track = a['track']
           let date = a['time'].substr(0, 19)
+
 
 
           // temp_html 안에 모달을 넣어 수정 버튼을 누르면 입력 창이 뜨게 합니다.
@@ -197,7 +219,7 @@
                                     <div class="card-body">
                                         <blockquote class="blockquote mb-0" id="blockquote">
                                             <p>${comment}</p>
-                                            <p><small class="text-muted">작성자 : ${nickname}<br>작성 시간 : ${date}</small></p>
+                                            <p><small class="text-muted">트랙 : ${track} <br> 작성자 : ${nickname}<br>작성 시간 : ${date}</small></p>
                                             <button type="button" class="btn btn-dark" onclick="del_comment('${nickname}')">삭제하기</button>
                                             <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">수정하기</button>
                                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -382,6 +404,7 @@
     </div>
   </div>
 
+
   <!-- 방명록 -->
 
   <div class="comment-box">
@@ -393,12 +416,30 @@
     <div class="form-floating">
       <input id="comment" class="form-control" placeholder="응원 한 마디">
       <label for="floatingPassword">응원 한 마디</label>
+      <fieldset class="allcheckbox">
+        <legend>트랙을 선택해 주세요</legend>
+        <div>
+          <input type="checkbox" class = "track1" id="Node.js" value="Node.js"   />
+          <label for="Node.js">Node.js</label>
+        </div>
+        <div>
+          <input type="checkbox" class = "track2" id="Spring"  value="Spring" />
+          <label for="Spring">Spring</label>
+        </div>
+        <div>
+          <input type="checkbox" class = "track3" id="React" value="React" />
+          <label for="React">React</label>
+        </div>
+      </fieldset>
+      <br>
+      <button onclick="save_comment()" type="button" class="btn btn-outline-dark" >저장</button>
+      <div id="comment-list" class="comment-list" id="comment-list">
     </div>
-    <br>
-    <button onclick="save_comment()" type="button" class="btn btn-outline-dark">저장</button>
-    <div id="comment-list" class="comment-list" id="comment-list">
+    
+  </div>
+ 
 
-    </div>
+  </div>
   </div>
 
   </div>
