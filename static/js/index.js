@@ -12,6 +12,7 @@
         let nickname = a['nickname']
         let comment = a['comment']
         let track = a['track']
+        let part = a['part']
         let date = a['time'].substr(0, 19)
  // temp_html 안에 모달을 넣어 수정 버튼을 누르면 입력 창이 뜨게 합니다.
         // 삭제하기 버튼을 누르면 바로 del_comment('${nickname}') 과 이어져 삭제되게 합니다.
@@ -19,7 +20,7 @@
                                   <div class="card-body">
                                       <blockquote class="blockquote mb-0" id="blockquote">
                                           <p>${comment}</p>
-                                          <p><small class="text-muted">트랙 : ${track} <br> 작성자 : ${nickname}<br>작성 시간 : ${date}</small></p>
+                                          <p><small class="text-muted">트랙 : ${track} <br> 작성자 : ${nickname}<br>희망 분야 : ${part}<br>작성 시간 : ${date}</small></p>
                                           <button type="button" class="btn btn-dark" onclick="del_comment('${nickname}')">삭제하기</button>
                                           <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">수정하기</button>
                                           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
