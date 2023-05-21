@@ -140,6 +140,8 @@
     <div class="form-floating">
       <input id="comment" class="form-control" placeholder="응원 한 마디">
       <label for="floatingPassword">응원 한 마디</label>
+
+
       <fieldset class="allradiobox"><br>
         <legend class="tracktitle">트랙을 선택해 주세요</legend>
         <div>
@@ -155,6 +157,19 @@
           <label for="React">React</label>
         </div>
       </fieldset>
+
+      <fieldset class="allcheckbox"><br>
+        <legend class = "tracktitle">분야를 선택해 주세요</legend>
+        <div>
+          <input type="checkbox" class = "frontend" id="frontend" value="frontend"   />
+          <label for="frontend">frontend</label>
+        </div>
+        <div>
+          <input type="checkbox" class = "backend" id="backend"  value="backend" />
+          <label for="backend">backend</label>
+        </div>
+      </fieldset>
+      
       <br>
       <button onclick="save_comment()" type="button" class="btn btn-outline-dark">저장</button>
       <div id="comment-list" class="comment-list" id="comment-list">
