@@ -1,0 +1,147 @@
+
+
+* {
+    font-family: 'Gowun Dodum', sans-serif;
+  }
+  
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+
+  }
+
+  .title>h1 {
+
+
+    margin: 0px;
+    padding: 0px;
+    font-size: 80px;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    color: gray
+  }
+
+  .title2>img {
+    border-radius: 5px;
+    width: 600px;
+    height: 400px;
+    margin: 20px 20px 20px 20px;
+
+  }
+
+  .title2 {
+    margin: 0px 20px 20px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .desc {
+    display: flex;
+    align-items: center;
+    font-size: 21px;
+    margin-bottom: 60px;
+  }
+
+  .teamphoto {
+    border-radius: 20px;
+  }
+
+  .ptitle {
+    margin: 0px;
+    padding: 0px;
+    font-size: 30px;
+    color: #2aad3c;
+    font-weight: 400;
+    margin-bottom: 16px;
+    padding-bottom: 5px;
+  }
+
+  .ptitle2 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    color: #2aad3c;
+    font-weight: 400;
+    margin-bottom: 16px;
+    padding-bottom: 5px;
+  }
+
+  .paragraph {
+    color: gray;
+    font-size: 17px;
+  }
+
+  .desc img {
+    width: 450px;
+    margin-right: 30px;
+
+  }
+
+  .mycards {
+    margin: 20px auto 0px auto;
+    width: 1000px;
+    max-width: 1500px;
+  }
+
+  .col {
+    padding: 0px 10px 0px 0px;
+
+  }
+
+  .comment-list {
+    margin: 20px auto 20px auto;
+  }
+
+  /* 아래로는 코멘트 박스 */
+  .comment-box {
+    width: 500px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto 0px auto;
+  }
+
+  .comment-box>h2 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 300;
+    color: #222;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 60px;
+
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
+  }
+
+  .comment-box>h2:after,
+  .comment-box>h2:before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #2aad3c;
+    border-top: 1px solid #2aad3c;
+    height: 5px;
+    background-color: #f8f8f8;
+  }
+
+  .reple {
+    border-radius: 10px;
+  }
+
+  .tracktitle{
+    font-size: 20px;
+  }
+ 

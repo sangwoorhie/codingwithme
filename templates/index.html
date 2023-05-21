@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/index.css') }}" />
+  <title>소개위드미</title>
+
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap") 
+    
+   
+  </style>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+</head>
+
+<body>
+
+  <div class="title">
+    <h1>소개 with me</h1>
+    <p class="subtitle">Node.js A반 2조</p>
+  </div>
+  <div class="title2" id="title2">
+    <div class="desc" id="desc">
+      <img class="teamphoto" src="https://i.postimg.cc/PqKgCJbd/allteam.png" />
+      <div class="descp" id="descp">
+        <p class="ptitle">Team. 코딩위드미</p>
+        <p class="paragraph">
+          팀 소개 : 개발자가 되고 싶은 5명이 함께 협업을 배워나가요!<br>
+          팀 목표 : 프로젝트 완성! <br>
+          팀 약속 : 13:00 ~ 14:00 점심 시간 / 18:00 ~ 19:00 저녁 시간 <br>
+        </p>
+        <p class="ptitle2"> 팀 규칙 ! </p>
+        <p class="paragraph">
+          다영: 피드백을 요청하면 y/n에 관계없이 확실하게 답변을 준다. <br>
+          상우: 누구 한명이라도 모르는 것이 있으면 짚고 넘어간다. <br>
+          승현: 모르는 내용이 있다면 제일 먼저 검색해 본다. <br>
+          성원: 정보 공유를 잘한다. <br>
+          혜민: 모르는 게 있으면 물어보기.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 멤버 카드 -->
+  <div class="mycards">
+    <div class="row row-cols-1 row-cols-md-5 g-5" id="cards-box">
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://i.postimg.cc/4x5ZLDB2/t043597jk8v-u055afalu9e-844e26a259ec-512-480.jpg"
+            class="card-img-top">
+          <div class="card-body">
+            <h5>이다영</h5>
+            <p>MBTI : INFJ</p>
+            <p>프로젝트를 완성하는 날, <br>트랙을 완주하는 날까지<br> 최선을 다하겠습니다!</p>
+            <button type="button" onclick="location.href='https://verdantjuly.github.io/withmedayoung/'"
+              class="btn btn-success">Introduce</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://i.postimg.cc/Pr1dZpZj/t043597jk8v-u053jslhs8k-ece0e600acf6-512-480.jpg"
+            class="card-img-top">
+          <div class="card-body">
+            <h5>이승현</h5>
+            <p>MBTI : ENTJ</p>
+            <p>열심히 캠프 참여해서 <br>어엿한 프로그램 <br>개발자로 거듭나겠습니다</p>
+            <button type="button" onclick="location.href='https://jamjaemm.github.io/project_beginning/'"
+              class="btn btn-success">Introduce</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://i.postimg.cc/1391qWsG/t043597jk8v-u051ukhdn83-cdd3648e9c6c-512-480.png"
+            class="card-img-top">
+          <div class="card-body">
+            <h5>우성원</h5>
+            <p>MBTI : ISFP</p>
+            <p>포기하지않고 꾸준히 <br> 해서 성공한 개발자가 <br>되겠습니다.</p>
+            <button type="button" onclick="location.href='https://sungwon93.github.io/mypage/'"
+              class="btn btn-success">Introduce</button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://i.postimg.cc/KY8bd0WG/t043597jk8v-u055gm324au-7084f39e2aa9-512-480.jpg"
+            class="card-img-top">
+          <div class="card-body">
+            <h5>이상우</h5>
+            <p>MBTI : INFP</p>
+            <p>부트캠프를 수료하여 <br>멋진 개발자로 <br>거듭나겠습니다.</p>
+            <button type="button" onclick="location.href='https://sangwoorhie.github.io/sangwoo/'"
+              class="btn btn-success">Introduce</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+
+          <img src="https://i.postimg.cc/3JY7pcfn/2023-05-15-22-55-19.png" class="card-img-top">
+          <div class="card-body">
+            <h5>서혜민</h5>
+            <p>MBTI : INFP</p>
+            <p>어엿한 개발자가 <br>될 수 있도록 <br>열심히 참여 하겠습니다.</p>
+            <button type="button" onclick="location.href='https://ex-1008.tistory.com/'"
+              class="btn btn-success">Introduce</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 방명록 -->
+
+  <div class="comment-box">
+    <h2 class="comment-title">Team.코딩위드미 응원하기</h2>
+    <div class="form-floating mb-3">
+      <input id="nickname" class="form-control" placeholder="닉네임">
+      <label for="floatingInput">닉네임</label>
+    </div>
+    <div class="form-floating">
+      <input id="comment" class="form-control" placeholder="응원 한 마디">
+      <label for="floatingPassword">응원 한 마디</label>
+      <fieldset class="allradiobox"><br>
+        <legend class="tracktitle">트랙을 선택해 주세요</legend>
+        <div>
+          <input type="radio" name="radio" class="track1" id="Node.js" value="Node.js" />
+          <label for="Node.js">Node.js</label>
+        </div>
+        <div>
+          <input type="radio" name="radio" class="track2" id="Spring" value="Spring" />
+          <label for="Spring">Spring</label>
+        </div>
+        <div>
+          <input type="radio" name="radio" class="track3" id="React" value="React" />
+          <label for="React">React</label>
+        </div>
+      </fieldset>
+      <br>
+      <button onclick="save_comment()" type="button" class="btn btn-outline-dark">저장</button>
+      <div id="comment-list" class="comment-list" id="comment-list">
+      </div>
+
+    </div>
+
+
+  </div>
+  </div>
+
+  </div>
+
+</body>
+
+</html>
