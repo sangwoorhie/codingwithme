@@ -26,6 +26,7 @@ def comments_post():
     nickname_receive = request.form['nickname_give']
     comment_receive = request.form['comment_give']
     track_receive = request.form['track_give']
+    part_receive = request.form['part_give']
     kst = timezone(timedelta(hours=9))
     nowtime = str(datetime.now(tz=kst))
 
@@ -33,7 +34,8 @@ def comments_post():
         'nickname':nickname_receive,
         'comment':comment_receive,
         'time':nowtime,
-        'track': track_receive
+        'track': track_receive,
+        'part' : part_receive
         }
     
 
