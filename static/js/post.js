@@ -1,7 +1,11 @@
 // POST 방식 : nickname_give, comment_give, track_give 에 방명록을 작성하기 위한 닉네임, 내용, 트랙을 담아 보냅니다. 
 function save_comment() {
+
   let nickname = $('#nickname').val()
   let comment = $('#comment').val()
+
+  
+
   let track1 = $('.track1')
   let track2 = $('.track2')
   let track3 = $('.track3')
@@ -22,29 +26,20 @@ function save_comment() {
     alert('트랙이 없나요? 트랙을 신청해 보세요!');
   }
 
-  let frontend = $('.frontend')
-  let backend  = $('.backend')
-  let part 
 
-  if (frontend.is(':checked') == true && backend.is(':checked') == true) {
-    part = frontend.val().toString() +' ' + backend.val().toString()
-  }
-  else if (frontend.is(':checked') == true) {
-    part = frontend.val().toString()
-  }
-  else if (backend.is(':checked') == true) {
-    part = backend.val().toString()
 
-  }
-  else{
-    alert('파트가 없는 자유로운 영혼!');
+  let part = document.querySelectorAll("input[name='part']:checked");
+  let partgive = ' '
+  let partkeys = Object.keys(part).length
+  for (let i=0;i<partkeys;i++){
+   partgive = partgive +  "  " + part[i].value
   }
 
   let formData = new FormData();
   formData.append("nickname_give", nickname);
   formData.append("comment_give", comment);
   formData.append("track_give", track);
-  formData.append("part_give", part);
+  formData.append("part_give",partgive);
 
   fetch('/comments', { method: "POST", body: formData }).then((res) => res.json()).then((data) => {
     alert(data["msg"]);
